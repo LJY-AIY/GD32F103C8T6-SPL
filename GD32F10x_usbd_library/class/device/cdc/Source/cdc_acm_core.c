@@ -46,21 +46,21 @@ usb_desc_dev cdc_dev_desc =
 {
     .header = 
      {
-         .bLength          = USB_DEV_DESC_LEN, 
-         .bDescriptorType  = USB_DESCTYPE_DEV,
+         .bLength          = USB_DEV_DESC_LEN, //描述符长度 0x12
+         .bDescriptorType  = USB_DESCTYPE_DEV, //描述符类型 1:设备描述符
      },
-    .bcdUSB                = 0x0200U,
-    .bDeviceClass          = USB_CLASS_CDC,
-    .bDeviceSubClass       = 0x00U,
-    .bDeviceProtocol       = 0x00U,
-    .bMaxPacketSize0       = USBD_EP0_MAX_SIZE,
-    .idVendor              = USBD_VID,
-    .idProduct             = USBD_PID,
-    .bcdDevice             = 0x0100U,
-    .iManufacturer         = STR_IDX_MFC,
-    .iProduct              = STR_IDX_PRODUCT,
-    .iSerialNumber         = STR_IDX_SERIAL,
-    .bNumberConfigurations = USBD_CFG_MAX_NUM,
+    .bcdUSB                = 0x0200U,          //USB版本 0x0200 表示为USB2.0
+    .bDeviceClass          = USB_CLASS_CDC,    //设备类的代码，CDC：0x02
+    .bDeviceSubClass       = 0x00U,            //设备子类  
+    .bDeviceProtocol       = 0x00U,            //设备协议
+    .bMaxPacketSize0       = USBD_EP0_MAX_SIZE,//端点0的最大包大小，USB2.0全速设备中最大为64
+    .idVendor              = USBD_VID,         //设备的制造商ID
+    .idProduct             = USBD_PID,         //设备的产品ID
+    .bcdDevice             = 0x0100U,          //设备版本 这个自己自定义的
+    .iManufacturer         = STR_IDX_MFC,      //有关制造商的描述字符串描述符索引
+    .iProduct              = STR_IDX_PRODUCT,  //有关产品的描述字符串描述符索引
+    .iSerialNumber         = STR_IDX_SERIAL,   //有关产品唯一序列号的描述字符串描述符索引
+    .bNumberConfigurations = USBD_CFG_MAX_NUM, //配置描述符的数量 这里为1
 };
 
 /* USB device configuration descriptor */

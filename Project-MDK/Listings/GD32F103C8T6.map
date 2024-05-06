@@ -28,7 +28,7 @@ Section Cross References
     main.o(i.main) refers to key.o(i.Key_Init) for Key_Init
     main.o(i.main) refers to spi.o(i.SPI_Init) for SPI_Init
     main.o(i.main) refers to led.o(i.LED_Init) for LED_Init
-    main.o(i.main) refers to usbd.o(i.UBSD_Init) for UBSD_Init
+    main.o(i.main) refers to usbd.o(i.USBD_Init) for USBD_Init
     main.o(i.main) refers to printf8.o(i.__0printf$8) for __2printf
     main.o(i.main) refers to usbd.o(i.USBD_Kernel) for USBD_Kernel
     gd32f10x_it.o(i.SysTick_Handler) refers to systick.o(i.delay_decrement) for delay_decrement
@@ -99,18 +99,18 @@ Section Cross References
     usbd.o(i.SetSerialString) refers to memseta.o(.text) for __aeabi_memclr
     usbd.o(i.SetSerialString) refers to usbd.o(i.utf8_to_utf16_le) for utf8_to_utf16_le
     usbd.o(i.SetSerialString) refers to cdc_acm_core.o(.data) for cdc_desc
-    usbd.o(i.UBSD_Init) refers to gd32f10x_rcu.o(i.rcu_periph_clock_enable) for rcu_periph_clock_enable
-    usbd.o(i.UBSD_Init) refers to gd32f10x_rcu.o(i.rcu_clock_freq_get) for rcu_clock_freq_get
-    usbd.o(i.UBSD_Init) refers to gd32f10x_rcu.o(i.rcu_usb_clock_config) for rcu_usb_clock_config
-    usbd.o(i.UBSD_Init) refers to usbd_core.o(i.usbd_init) for usbd_init
-    usbd.o(i.UBSD_Init) refers to gd32f10x_misc.o(i.nvic_priority_group_set) for nvic_priority_group_set
-    usbd.o(i.UBSD_Init) refers to gd32f10x_misc.o(i.nvic_irq_enable) for nvic_irq_enable
-    usbd.o(i.UBSD_Init) refers to usbd.o(i.GetSysemtRest) for GetSysemtRest
-    usbd.o(i.UBSD_Init) refers to memcpya.o(.text) for __aeabi_memcpy4
-    usbd.o(i.UBSD_Init) refers to cdc_acm_core.o(i.cdc_acm_data_send) for cdc_acm_data_send
-    usbd.o(i.UBSD_Init) refers to cdc_acm_core.o(.data) for cdc_desc
-    usbd.o(i.UBSD_Init) refers to usbd.o(.data) for desc
-    usbd.o(i.UBSD_Init) refers to usbd.o(.bss) for usbd_cdc
+    usbd.o(i.USBD_Init) refers to gd32f10x_rcu.o(i.rcu_periph_clock_enable) for rcu_periph_clock_enable
+    usbd.o(i.USBD_Init) refers to gd32f10x_rcu.o(i.rcu_clock_freq_get) for rcu_clock_freq_get
+    usbd.o(i.USBD_Init) refers to gd32f10x_rcu.o(i.rcu_usb_clock_config) for rcu_usb_clock_config
+    usbd.o(i.USBD_Init) refers to usbd_core.o(i.usbd_init) for usbd_init
+    usbd.o(i.USBD_Init) refers to gd32f10x_misc.o(i.nvic_priority_group_set) for nvic_priority_group_set
+    usbd.o(i.USBD_Init) refers to gd32f10x_misc.o(i.nvic_irq_enable) for nvic_irq_enable
+    usbd.o(i.USBD_Init) refers to usbd.o(i.GetSysemtRest) for GetSysemtRest
+    usbd.o(i.USBD_Init) refers to memcpya.o(.text) for __aeabi_memcpy4
+    usbd.o(i.USBD_Init) refers to cdc_acm_core.o(i.cdc_acm_data_send) for cdc_acm_data_send
+    usbd.o(i.USBD_Init) refers to cdc_acm_core.o(.data) for cdc_desc
+    usbd.o(i.USBD_Init) refers to usbd.o(.data) for desc
+    usbd.o(i.USBD_Init) refers to usbd.o(.bss) for usbd_cdc
     usbd.o(i.USBD_Kernel) refers to cdc_acm_core.o(i.cdc_acm_check_ready) for cdc_acm_check_ready
     usbd.o(i.USBD_Kernel) refers to cdc_acm_core.o(i.cdc_acm_data_receive) for cdc_acm_data_receive
     usbd.o(i.USBD_Kernel) refers to cdc_acm_core.o(i.cdc_acm_data_send) for cdc_acm_data_send
@@ -1354,9 +1354,9 @@ Image Symbol Table
     i.SVC_Handler                            0x08000434   Section        0  gd32f10x_it.o(i.SVC_Handler)
     i.SysTick_Handler                        0x08000438   Section        0  gd32f10x_it.o(i.SysTick_Handler)
     i.SystemInit                             0x080004e8   Section        0  system_gd32f10x.o(i.SystemInit)
-    i.UBSD_Init                              0x080005bc   Section        0  usbd.o(i.UBSD_Init)
-    i.USART0_IRQHandler                      0x080006c0   Section        0  usart.o(i.USART0_IRQHandler)
-    i.USART0_Init                            0x08000774   Section        0  usart.o(i.USART0_Init)
+    i.USART0_IRQHandler                      0x080005bc   Section        0  usart.o(i.USART0_IRQHandler)
+    i.USART0_Init                            0x08000670   Section        0  usart.o(i.USART0_Init)
+    i.USBD_Init                              0x08000720   Section        0  usbd.o(i.USBD_Init)
     i.USBD_Kernel                            0x08000824   Section        0  usbd.o(i.USBD_Kernel)
     i.USBD_LP_CAN0_RX0_IRQHandler            0x08000844   Section        0  usbd.o(i.USBD_LP_CAN0_RX0_IRQHandler)
     i.UsageFault_Handler                     0x0800084c   Section        0  gd32f10x_it.o(i.UsageFault_Handler)
@@ -1690,9 +1690,9 @@ Image Symbol Table
     SVC_Handler                              0x08000435   Thumb Code     4  gd32f10x_it.o(i.SVC_Handler)
     SysTick_Handler                          0x08000439   Thumb Code   156  gd32f10x_it.o(i.SysTick_Handler)
     SystemInit                               0x080004e9   Thumb Code   196  system_gd32f10x.o(i.SystemInit)
-    UBSD_Init                                0x080005bd   Thumb Code   176  usbd.o(i.UBSD_Init)
-    USART0_IRQHandler                        0x080006c1   Thumb Code   140  usart.o(i.USART0_IRQHandler)
-    USART0_Init                              0x08000775   Thumb Code   166  usart.o(i.USART0_Init)
+    USART0_IRQHandler                        0x080005bd   Thumb Code   140  usart.o(i.USART0_IRQHandler)
+    USART0_Init                              0x08000671   Thumb Code   166  usart.o(i.USART0_Init)
+    USBD_Init                                0x08000721   Thumb Code   176  usbd.o(i.USBD_Init)
     USBD_Kernel                              0x08000825   Thumb Code    26  usbd.o(i.USBD_Kernel)
     USBD_LP_CAN0_RX0_IRQHandler              0x08000845   Thumb Code     8  usbd.o(i.USBD_LP_CAN0_RX0_IRQHandler)
     UsageFault_Handler                       0x0800084d   Thumb Code     4  gd32f10x_it.o(i.UsageFault_Handler)
@@ -1815,9 +1815,9 @@ Memory Map of the image
     0x08000434   0x08000434   0x00000004   Code   RO          211    i.SVC_Handler       gd32f10x_it.o
     0x08000438   0x08000438   0x000000b0   Code   RO          212    i.SysTick_Handler   gd32f10x_it.o
     0x080004e8   0x080004e8   0x000000d4   Code   RO           12    i.SystemInit        system_gd32f10x.o
-    0x080005bc   0x080005bc   0x00000104   Code   RO          508    i.UBSD_Init         usbd.o
-    0x080006c0   0x080006c0   0x000000b4   Code   RO          413    i.USART0_IRQHandler  usart.o
-    0x08000774   0x08000774   0x000000b0   Code   RO          414    i.USART0_Init       usart.o
+    0x080005bc   0x080005bc   0x000000b4   Code   RO          413    i.USART0_IRQHandler  usart.o
+    0x08000670   0x08000670   0x000000b0   Code   RO          414    i.USART0_Init       usart.o
+    0x08000720   0x08000720   0x00000104   Code   RO          508    i.USBD_Init         usbd.o
     0x08000824   0x08000824   0x00000020   Code   RO          509    i.USBD_Kernel       usbd.o
     0x08000844   0x08000844   0x00000008   Code   RO          510    i.USBD_LP_CAN0_RX0_IRQHandler  usbd.o
     0x0800084c   0x0800084c   0x00000004   Code   RO          213    i.UsageFault_Handler  gd32f10x_it.o

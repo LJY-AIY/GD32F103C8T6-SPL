@@ -12,7 +12,7 @@ int main(void)
     Key_Init();
     SPI_Init();
     LED_Init();
-    UBSD_Init();
+    USBD_Init();
 
     /***********************Periphery Init***********************/
     //PSRAM_Init();

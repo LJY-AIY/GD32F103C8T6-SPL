@@ -5,7 +5,7 @@
 extern "C" {
 #endif
 
-void UBSD_Init(void);
+void USBD_Init(void);
 
 void USBD_Kernel(void);
 

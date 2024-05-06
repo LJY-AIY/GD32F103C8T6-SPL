@@ -24,7 +24,7 @@ static usb_class *class;    //设备类相关规范
     hid_fop_handler hid_fop;
 #endif
 
-void UBSD_Init(void)
+void USBD_Init(void)
 {
     uint32_t system_clock;
     uint8_t power_reset_flag;
