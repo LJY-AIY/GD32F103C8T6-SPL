@@ -148,7 +148,6 @@ void PendSV_Handler(void)
     \retval     none
 */
 static uint8_t Ticknum[2] = {0};
-static uint32_t keytick = 0;
 
 void SysTick_Handler(void)
 {
@@ -175,17 +174,6 @@ void SysTick_Handler(void)
             Ticknum[1] = 0;
         }
     }
-    if(KEY_IN_STATUS)
-    {
-        keytick++;
-    }
-    else
-    {
-        keytick = 0;
-    }
-    if(keytick >= 100)
-    {
-        keytick = 0;
-        Key_set_status(1);
-    }
+
+    Keypad_state_machine();
 }

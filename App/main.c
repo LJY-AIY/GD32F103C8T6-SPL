@@ -12,9 +12,7 @@ int main(void)
     Key_Init();
     SPI_Init();
     LED_Init();
-    USBD_Init();
-
-
+    //USBD_Init();	
     /***********************Periphery Init***********************/
     //PSRAM_Init();
     //MPU6050_Init();
@@ -24,7 +22,11 @@ int main(void)
     /***********************main loop***********************/
     while (1)
     {
-        USBD_Kernel();
+        //USBD_Kernel();
+        if(Key_Scan() == KEY_WORLUP)
+        {
+            printf("workup key\n");
+        }
     }
 }
 

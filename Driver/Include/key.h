@@ -5,13 +5,20 @@
 extern "C" {
 #endif
 
-#define KEY_IN_STATUS   gpio_input_bit_get(GPIOA,GPIO_PIN_0)
+#define KEY_DEBOUNCE_TICK   (20U)        //消抖参数
+#define KEY_IN_STATUS       gpio_input_bit_get(GPIOA,GPIO_PIN_0)
+
+typedef enum
+{
+    KEY_NULL,
+    KEY_WORLUP,
+}Keypad_value_t;
 
 void Key_Init(void);
 
-void Key_set_status(uint8_t status);
+void Keypad_state_machine(void);
 
-uint8_t Key_get_status(void);
+Keypad_value_t Key_Scan(void);
 
 #ifdef __cplusplus
 }
