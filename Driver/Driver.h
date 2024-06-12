@@ -11,6 +11,7 @@ extern "C" {
 #include "led.h"
 #include "usbd.h"
 #include "key.h"
+#include "i2c.h"
 
 
 

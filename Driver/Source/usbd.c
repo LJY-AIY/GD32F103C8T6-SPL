@@ -12,7 +12,7 @@
 extern void usbd_isr (void);
 
 static uint8_t GetSysemtRest(void);
-static void SetSerialString(char *desc);
+//static void SetSerialString(char *desc);
 
 static usb_dev usbd_cdc;    //USBD相关设备信息结构体,将保存整个设备和数据结构的信息
 static usb_desc *desc;      //设备、配置、电源以及其他描述符集合体
@@ -200,7 +200,7 @@ int utf8_to_utf16_le(const char* utf8_string, uint16_t* utf16_buffer, size_t buf
 /**********************************************************************
 * CDCACM function
 ***********************************************************************/
-#if (USE_USBD_CDCACM)
+#if (USE_USBD_CDCACM == 2)
 /**********************************************************************
 * 修改字符串标识符中的串行字符串标识符 默认是没有信息 PC显示为：USB串行设备
 ***********************************************************************/
@@ -352,8 +352,6 @@ void USBD_Kernel(void)
 #if (USE_USBD_WINUSB)
     static usb_winusb_handler *winusb;
     static uint8_t flag = 0;
-    static uint32_t pack_coumt = 0;
-    static uint8_t usbd_info[] = {0xA1,0xA2,0xA3,0xA4,0xA5,0xA6,0xA7,0xA8};
     winusb = (usb_winusb_handler *)usbd_cdc.class_data[0];
     if (winusb_check_ready(&usbd_cdc) == 0) // 当有CDC的数据接收到
     {
@@ -366,13 +364,23 @@ void USBD_Kernel(void)
         {
             for(uint8_t i = 0;i < winusb->receive_length;i++)
             {
-                winusb->data[i] = ~winusb->data[i];
-                printf("%02x ",winusb->data[i]);
+                //winusb->data[i] = ~winusb->data[i];
+                if(winusb->data[i] >= 0x41 && winusb->data[i] <= 0x5A)//大写
+                {
+                    winusb->data[i] += 32;
+                }
+                else if(winusb->data[i] >= 0x61 && winusb->data[i] <= 0x7A)//小写
+                {
+                    winusb->data[i] -= 32;
+                }
+                //printf("%c",winusb->data[i]);
             }
+            winusb_data_send(&usbd_cdc);
         }
-        winusb_data_send(&usbd_cdc);
     }
 #if 0
+    static uint32_t pack_coumt = 0;
+    static uint8_t usbd_info[] = {0xA1,0xA2,0xA3,0xA4,0xA5,0xA6,0xA7,0xA8};
     if(flag)
     {
         if(winusb->receive_length != 0)

@@ -44,9 +44,9 @@ OF SUCH DAMAGE.
 /****************************************************************************************
  * 总配置开关
 ****************************************************************************************/
-#define USE_USBD_CDCACM                   1U
+#define USE_USBD_CDCACM                   0U
 #define USE_USBD_HIDKEY                   0U
-#define USE_USBD_WINUSB                   0U
+#define USE_USBD_WINUSB                   1U
 #define USBD_INT_DEBUG                    0U
 
 

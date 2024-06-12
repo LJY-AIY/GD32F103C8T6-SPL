@@ -14,9 +14,10 @@ int main(void)
     LED_Init();
     USBD_Init();
 
+
     /***********************Periphery Init***********************/
     //PSRAM_Init();
-
+    //MPU6050_Init();
     /***********************App/OS Init***********************/
     printf("Application Runing!\n");
 
@@ -27,5 +28,20 @@ int main(void)
     }
 }
 
-
+void nop_delay_us(uint32_t us)
+{
+    while(us--)
+    {
+        __NOP();__NOP();__NOP();__NOP();__NOP();__NOP();__NOP();__NOP();__NOP();__NOP();
+        __NOP();__NOP();__NOP();__NOP();__NOP();__NOP();__NOP();__NOP();__NOP();__NOP();
+        __NOP();__NOP();__NOP();__NOP();__NOP();__NOP();__NOP();__NOP();__NOP();__NOP();
+        __NOP();__NOP();__NOP();__NOP();__NOP();__NOP();__NOP();__NOP();__NOP();__NOP();
+        __NOP();__NOP();__NOP();__NOP();__NOP();__NOP();__NOP();__NOP();__NOP();__NOP();
+        __NOP();__NOP();__NOP();__NOP();__NOP();__NOP();__NOP();__NOP();__NOP();__NOP();
+        __NOP();__NOP();__NOP();__NOP();__NOP();__NOP();__NOP();__NOP();__NOP();__NOP();
+        __NOP();__NOP();__NOP();__NOP();__NOP();__NOP();__NOP();__NOP();__NOP();__NOP();
+        __NOP();__NOP();__NOP();__NOP();__NOP();__NOP();__NOP();__NOP();__NOP();__NOP();
+        __NOP();__NOP();__NOP();__NOP();__NOP();__NOP();
+    }
+}
 

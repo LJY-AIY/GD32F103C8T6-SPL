@@ -17,7 +17,7 @@
 #if (USE_USBD_WINUSB)
 
 #define USBD_VID                     0x28E9U
-#define USBD_PID                     0x0383U
+#define USBD_PID                     0x0384U
 
 usb_desc_dev winusb_dev_desc =
 {

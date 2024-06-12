@@ -340,7 +340,7 @@
               <MiscControls></MiscControls>
               <Define>USE_STDPERIPH_DRIVER,GD32F10X_MD</Define>
               <Undefine></Undefine>
-              <IncludePath>..\CMSIS;..\LIB\Include;..\App;..\Driver\Include;..\Periphery\Include;..\Periphery;..\Driver;..\GD32F10x_usbd_library\usbd\Include;..\GD32F10x_usbd_library\device\Include;..\GD32F10x_usbd_library;..\GD32F10x_usbd_library\class\device\cdc\Include;..\GD32F10x_usbd_library\class\device\hid\Include;..\GD32F10x_usbd_library\class\device\winusb\Include</IncludePath>
+              <IncludePath>..\CMSIS;..\LIB\Include;..\App;..\Driver\Include;..\Periphery\Include;..\Periphery;..\Driver;..\GD32F10x_usbd_library\usbd\Include;..\GD32F10x_usbd_library\device\Include;..\GD32F10x_usbd_library;..\GD32F10x_usbd_library\class\device\cdc\Include;..\GD32F10x_usbd_library\class\device\hid\Include;..\GD32F10x_usbd_library\class\device\winusb\Include;..\Soft_lib</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -469,6 +469,11 @@
               <FileType>1</FileType>
               <FilePath>..\Driver\Source\key.c</FilePath>
             </File>
+            <File>
+              <FileName>i2c.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Driver\Source\i2c.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -588,6 +593,16 @@
               <FileName>gd32f10x_wwdgt.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\LIB\Source\gd32f10x_wwdgt.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>SFLIB</GroupName>
+          <Files>
+            <File>
+              <FileName>SF_i2c.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Soft_lib\SF_i2c.c</FilePath>
             </File>
           </Files>
         </Group>
